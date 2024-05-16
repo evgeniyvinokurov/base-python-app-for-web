@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<product>
+   <id>346346</id>
+   <name>Кружка Виноград</name>
+   <size>XXL</size>
+   <price>104.67</price>
+   <weight>100</weight>
+   <pics>1</pics>
+   <description>Модная Кружка Виноград дополнит ваш сервант свежими красками. Вы можете насладиться невероятным балансом цены и качества в нашем магазине. Бренд Е-МАГ - все что нужно вам и вашим близким.</description>
+   <pic>/static/pics/346346.png</pic>
+   <page>/catalog/details/346346.xml</page>
+</product>

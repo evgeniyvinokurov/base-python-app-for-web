@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<product>
+   <id>235236</id>
+   <name>Ручка Огурец</name>
+   <size>XXL</size>
+   <price>13.34</price>
+   <weight>20</weight>
+   <pics>1</pics>
+   <description>Модная Ручка Огурец дополнит ваш пенал свежими красками. Вы можете насладиться невероятным балансом цены и качества в нашем магазине. Бренд Е-МАГ - все что нужно вам и вашим близким.</description>
+   <pic>/static/pics/235236.png</pic>
+   <page>/catalog/details/235236.xml</page>
+</product>
