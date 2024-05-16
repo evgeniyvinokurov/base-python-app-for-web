@@ -1,4 +1,0 @@
-bottle
-pytest
-selenium
-numpy
