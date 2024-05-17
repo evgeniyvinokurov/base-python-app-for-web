@@ -121,3 +121,23 @@ body {
 .feedback-form__message {
 	padding: 5px;
 }
+
+.comments__title {
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.comments__item:nth-child(2n) {
+	background-color: #ececeb;
+}
+
+.comments__item {
+	padding: 5px;
+	margin-left: 10px;
+	width: 320px;
+	border-radius: 4px;
+}

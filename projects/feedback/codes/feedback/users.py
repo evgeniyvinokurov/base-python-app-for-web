@@ -23,4 +23,14 @@ def getuser(email):
             u = XmlLib.xml_to_dict(xmlfile, "user")
             if u["email"] == email:
                 return u 
-    return False           
+    return False     
+
+def all():
+    users = []
+    for file in os.listdir(base.feedback):
+        if ".xml" in file:            
+            xmlfile = XmlLib.xmlfile(base.feedback + file)            
+            u = XmlLib.xml_to_dict(xmlfile, "user")
+            users.append(u)
+            
+    return users         

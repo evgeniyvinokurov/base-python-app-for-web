@@ -10,7 +10,9 @@ from . import formvalidation
 @route('/feedback/')
 @view('feedback')
 def feedback(name='World'):
+    usersall = users.all()
     param = {}
+    param["usersall"] = usersall
     return param   
 
 
@@ -29,7 +31,7 @@ def user_check():
         else:
             return '{"status": "error", "key": "Only one feedback for email, please."}'
     else:
-        return '{"status": "ok", "key": "' + validated["key"] + '"}'
+        return '{"status": "error", "key": "' + validated["key"] + '"}'
    
 
 # ...

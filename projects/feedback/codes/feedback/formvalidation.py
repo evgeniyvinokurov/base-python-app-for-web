@@ -10,6 +10,7 @@ def checkemail(email):
 
 def validateform(u):
     resp = {}
+
     resp["status"] = "ok"
     resp["key"] = "Success"
 
