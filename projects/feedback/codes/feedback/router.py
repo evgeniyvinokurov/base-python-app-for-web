@@ -10,7 +10,7 @@ from . import formvalidation
 @route('/feedback/')
 @view('feedback')
 def feedback(name='World'):
-    usersall = users.all()
+    usersall = users.comments()
     param = {}
     param["usersall"] = usersall
     return param   

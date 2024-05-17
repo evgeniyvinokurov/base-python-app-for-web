@@ -25,12 +25,16 @@ def getuser(email):
                 return u 
     return False     
 
-def all():
+def comments():
     users = []
     for file in os.listdir(base.feedback):
         if ".xml" in file:            
             xmlfile = XmlLib.xmlfile(base.feedback + file)            
             u = XmlLib.xml_to_dict(xmlfile, "user")
             users.append(u)
-            
-    return users         
+
+    res = []
+    for u in users:
+        comment = {"name": u["name"], "comment": u["comment"]}
+        res.append(comment)
+    return res         
