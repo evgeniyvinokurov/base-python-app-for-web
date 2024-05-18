@@ -4,7 +4,7 @@ import { UsersService } from '../services/usersService.js';
 
 let Fform = Vue.component('fform', {
   	template:
-			'<div><div class="feedback-form">'+
+			'<div class="feedback-form">'+
         '<div class="feedback-form__inputs">'+
           '<div class="feedback-input"><span>Name:</span><input type="text" v-model="name" class="feedback-form__inputs-from"></input></div>'+
           '<div class="feedback-input"><span>Email:</span><input type="email" v-model="email" class="feedback-form__inputs-email"></input></div>'+
@@ -13,22 +13,16 @@ let Fform = Vue.component('fform', {
           '<div class="feedback-input"><input type="submit" @click="validateForm" class="feedback-form__inputs-submit" value="Submit"></input></div>'+
         '</div>'+
         '<div class="feedback-form__message">{{message}}</div>'+
-      '</div>'+
-      '<div class="comments">'+
-          '<p class="comments__title">Comments already made:</p>'+        
-          '<div class="comments__item" v-for="c in comments"><span>{{c["name"]}}</span>: <span>{{c["comment"]}}</span></div>'+
-      '</div></div>',
+      '</div>',
     data: function () {
         return {
           email: "",
           phone: "",
           comment: "", 
           name: "",
-          message: "",
-          comments: []
+          message: ""
         }
     },
-    props: ['param'],
     created: function() {
       this.comments = this.param;
     },
@@ -46,7 +40,7 @@ let Fform = Vue.component('fform', {
           self.message = data.key;     
           
           if (data.status == "ok"){
-            self.comments.push(user);
+	          self.$root.$emit("addedComment", {comment: user});
           }
         }, user)
       },

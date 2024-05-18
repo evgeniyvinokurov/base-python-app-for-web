@@ -14,22 +14,23 @@ def validateform(u):
     resp["status"] = "ok"
     resp["key"] = "Success"
 
-    if not u["phone"].isdigit():
-        resp["status"] = "error"
-        resp["key"] = "Only numbers in phone number, please!"
-    
     val = all(x.isalpha() or x.isspace() or x == "," or x == "." for x in u["comment"])
 
     if not val or len(u["comment"]) < 10:
         resp["status"] = "error"
         resp["key"] = "Only letters, spaces and [.,] in comment, minimum 10 chars, please!"
 
-    if not u["name"].isalpha():
+    if not u["phone"].isdigit():
         resp["status"] = "error"
-        resp["key"] = "Only texts in name, please!"
+        resp["key"] = "Only numbers in phone number, please!"
 
     if not checkemail(u["email"]):
         resp["status"] = "error"
         resp["key"] = "Only good emails, please!"
+
+
+    if not u["name"].isalpha():
+        resp["status"] = "error"
+        resp["key"] = "Only texts in name, please!"    
 
     return resp
