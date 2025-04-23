@@ -1,0 +1,143 @@
+body {
+	font-size: medium;
+	min-width: 500px;
+}
+
+.button {
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px;
+	border: 2px solid #3c4036;
+	cursor: pointer;
+	background-color: white;
+	font-size: 16px;
+}
+
+.header {
+	background-color: white;
+	border-bottom: 1px solid #e6e6e6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.header .menu {
+	margin: 10px;
+	color: #403939;
+	font-size: 17px;
+}
+
+.email {
+	display: inline-block;
+	position: absolute;
+	right: 130px;
+	top: 15px;
+	height: 20px;
+	font-size: 14px;
+}
+
+.title-327 {
+	padding: 2px;
+   border-radius: 4px;
+   color: white;
+}
+
+.menu {
+	font-family: mono;
+}
+
+.menu-item {
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.header .cart {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	height: 20px;
+}
+
+
+.footer {
+  bottom: 0px;
+  height: 100px;
+  position: fixed;
+  border-top: 1px solid #e6e6e6;
+  width: 100%;
+  background-color: white;
+}
+
+.footer .copyright {
+	margin-top: 80px;
+   font-size: 15px;
+   float: right;
+}
+
+.footer .menu-item {
+	font-size: 14px;
+}
+
+.footer .menu {
+	margin-top: 20px;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.footer .menu-item a {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+.app {
+	padding: 20px;
+}
+
+
+.feedback-form {
+	margin-top: 100px;
+	padding: 10px;
+}
+
+.feedback-input input, textarea {
+	margin-left: 10px;
+	border-radius: 3px;
+	border: solid 1px gray;
+}
+  
+.feedback-input {
+	padding: 5px;
+}
+
+.feedback-input input[type="submit"] {
+	margin-left: 200px;
+}
+
+.feedback-form__message {
+	padding: 5px;
+}
+
+.comments__title {
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.comments__item:nth-child(2n) {
+	background-color: #ececeb;
+}
+
+.comments__item {
+	padding: 5px;
+	margin-left: 10px;
+	width: 320px;
+	border-radius: 4px;
+}
