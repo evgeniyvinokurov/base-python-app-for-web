@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<product>
+   <id>124122</id>
+   <name>Ручка Чеснок</name>
+   <size>XXL</size>
+   <price>10.24</price>
+   <weight>20</weight>
+   <pics>1</pics>
+   <description>Модная Ручка Чеснок дополнит ваш пенал свежими красками. Вы можете насладиться невероятным балансом цены и качества в нашем магазине. Бренд Е-МАГ - все что нужно вам и вашим близким.</description>
+   <pic>/static/pics/124122.png</pic>
+   <page>/catalog/details/124122.xml</page>
+</product>

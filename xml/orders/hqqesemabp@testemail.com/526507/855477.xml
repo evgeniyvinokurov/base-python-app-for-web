@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<product>
+   <id>855477</id>
+   <name>Ручка Ананас</name>
+   <size>XXL</size>
+   <price>15.34</price>
+   <weight>20</weight>
+   <pics>1</pics>
+   <description>Модная Ручка Ананас дополнит ваш пенал свежими красками. Вы можете насладиться невероятным балансом цены и качества в нашем магазине. Бренд Е-МАГ - все что нужно вам и вашим близким.</description>
+   <pic>/static/pics/855477.png</pic>
+   <page>/catalog/details/855477.xml</page>
+</product>
