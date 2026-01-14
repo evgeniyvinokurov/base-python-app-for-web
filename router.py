@@ -3,4 +3,5 @@ from bottle import static_file
 
 
 from projects.feedback.codes.feedback import router
+from projects.race.codes.race import router
 
