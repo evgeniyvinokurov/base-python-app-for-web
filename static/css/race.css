@@ -1,0 +1,180 @@
+body {
+	font-size: medium;
+	min-width: 500px;
+	font-family: arial;
+}
+
+.hide {
+	display: none!important;
+}
+
+.link {
+	text-decoration: none;
+	color: #3c4036;
+}
+
+.linkshop {
+	text-decoration: none;
+	color: #237899;
+}
+
+
+.button {
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px;
+	border: 2px solid #3c4036;
+	cursor: pointer;
+	background-color: white;
+	font-size: 16px;
+}
+
+.header {
+	background-color: white;
+	border-bottom: 1px solid #e6e6e6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+
+
+.race-app {
+	padding: 20px;
+}
+
+
+.roach {
+	display: inline-block;
+	border: solid lightskyblue 2px;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: lightskyblue;
+}
+.roach img {
+	width: 32px;
+}
+
+.race {
+	padding: 10px;
+}
+
+.roach-house {
+	padding: 10px;
+	width: 800px;
+}
+
+input {
+	margin-top: 10px;
+}
+
+.cstadium {
+	position: relative;
+	overflow: hidden;
+}
+
+.stadium {
+	width: 800px;
+	border: 2px solid lightgrey;
+	padding-bottom: 20px;
+	padding-right: 20px;	
+	border-radius: 10px;
+	border-right: 7px dashed black;
+}
+
+
+.roach-race .r {
+	width: 5px;
+	height: 5px;
+}
+.roach-race .r img {
+	width: 28px;
+}
+
+.roach-race {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	padding: 20px;
+}
+
+h1 {
+	margin-left: 10px;
+	font-size: 45px;
+}
+
+.roach-item {
+  display: inline-block;
+  margin: 0px;
+  border-radius: 7px;
+  background-color: cornflowerblue;
+  padding: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.menu-bet {
+	position: absolute;
+	width: 120px;	
+}
+
+.menu-item {
+	width: 120px;
+	background-color: cornflowerblue;
+	color: white;
+	display: block;
+	padding: 5px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	background-color: white;
+	color: #404040;
+}
+
+.roach-remove {
+	width: 17px;
+	height: 17px;
+	background-color: cornflowerblue;
+	color: white;
+	display: inline-block;
+	padding-bottom: 4px;
+	text-align: center;
+	padding-left: 2px;
+	padding-right: 2px;
+	float: right;
+}
+
+
+.roach-house .roach .roach-remove {
+	display: none;
+}
+
+.email-container {
+	margin-bottom: 20px;
+}
+
+.bordered {
+	margin-top: 10px;;
+}
+
+
+.item {
+	display: inline-block;
+	padding: 5px;
+	margin: 10px;
+  }
+
+  .item div {
+	margin-top: 4px;
+  }
+  
+  .item-buy {
+	float: right;
+	cursor: pointer;
+  }

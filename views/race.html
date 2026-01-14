@@ -1,0 +1,48 @@
+% include('header.html')
+<link rel="stylesheet" type="text/css" href="/static/css/race.css">
+<h1>Roaches - Race. <a class="linkshop" href="/shop/">Shop</a></h1>
+
+% if started: 
+<div class="race-app started">
+% else:
+<div class="race-app">
+% end 
+	<div class="email-container">
+		<div class="email-view-container hide"><span>Hello, </span><span class="email-view"></span>!</div>
+		<div class="money-view-container hide"><span>You got </span><span class="money-view"></span> pistoles</div>
+		<div><input class="email" type="email" placeholder="Your email :)"></input></div>
+		<div><input class="email-ok" type="submit" value="Ok"></input></div>
+		<div><input class="logout hide" type="submit" value="Logout"></input></div>
+	</div>
+    <div class="race-container bordered">
+		<label>ready for race:</label><div class="race"></div>
+	</div>
+    <input class="get-roach" type="button" value="get roach"/>  
+    <input class="start" type="button" value="start"/> 
+	<div class="roach-house-container bordered">
+    	<label>house:</label><div class="roach-house"></div>    
+	</div>   
+	<div class="cstadium">
+		<div class="stadium">
+		</div>
+	</div>
+	<div class="set-nitro bordered hide">
+		<input type="button" value="Nitro"></input>
+	</div>
+	<div class="bets-container bordered hide">
+	</div>
+	<div class="top bordered">
+		% for u in top:
+		<div class="top-item">{{ u["email"] }}: {{ u["money"]}} pistoles </div>
+		% end
+	</div>
+</div>
+<div class="menu-bet hide">
+	<div class="menu-item" data-bet="100">100 pistoles</div>
+	<div class="menu-item" data-bet="200">200 pistoles</div>
+	<div class="menu-item" data-bet="500">500 pistoles</div>
+	<div class="menu-item" data-bet="all">all your pistoles</div>
+</div>
+<script src="/static/js/race.js"></script>
+% include('templates.html')
+% include('footer.html')
