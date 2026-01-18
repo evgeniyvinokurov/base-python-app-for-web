@@ -132,7 +132,7 @@ projects = [
         "index.html"
     ], "dirs": ["imgs", "fonts", "css"]},
     {"name": "get-your-song", "tags": ["php"], "files": [], "url": "http://www.evgeniyvinokurov.byethost9.com/get-your-song/"},
-    {"name": "python-scripts", "video": "true", "tags": ["python", "ffmpeg"], "files": [], "github": True},
+    {"name": "random-scripts-video-and-texts", "video": "true", "tags": ["python", "ffmpeg"], "files": [], "github": True},
     {"name": "story-linker", "tags": ["python", "js"], "files": [], "github": True},
     {"name": "lottery-salt-emulator", "tags": ["python", "bottle", "xml", "js"], "files": []},
     {"name": "e-shop-client", "tags": ["js", "markup", "catalog", "vuejs", "canvas"], "dirs": ["assets"], "files": [
