@@ -105,11 +105,12 @@ projects = [
         "all.js",
         "index.html"
     ], "github": True},
-    {"name": "dances", "tags": ["js", "markup", "ymaps", "svg", "jquery"], "dirs": [
+    {"name": "want-to-festival", "verses": 2, "github": True, "tags": ["js", "markup", "ymaps", "svg", "jquery"], "dirs": [
         "Bongos",
         "css",
         "fonts",
-        "imgs"
+        "imgs",
+        "music"
         ], "files": [
         "all.js",        
         "index.html"]
@@ -169,21 +170,41 @@ for p in projects:
     else:
         projectsdir = "../projects"
     pwi = p
+
     with open(str(projectsdir) + "/" + p["name"] + "/README.md", mode="r", encoding="utf-8") as f:  
         lines = list(f)
         strlines = lines[1:len(lines)]            
         contentstr = "".join(strlines)
         pwi["content"] = "<h2>" + lines[0] + "</h2>" + contentstr.replace("  ", "</br>")
-    for f in p["files"]:
-        file = codesdir + "/" + p["name"] + "/" + f       
-        os.makedirs(os.path.dirname(file), exist_ok=True)
-        oldfile = str(projectsdir) + "/" + p["name"] + "/" + f
-        print("copied " + p["name"] + " " + f)
-        shutil.copyfile(oldfile, file)
-    if "dirs" in p:
-        for d in p["dirs"]:
-            dir = codesdir + "/" + p["name"] + "/" + d
-            copy_and_overwrite(str(projectsdir) + "/" + p["name"] + "/" + d, dir)
+
+    if "verses" in p:
+        for f in p["files"]:
+            for i in range(0, p["verses"]):
+                file = codesdir + "/" + p["name"] + "/v" + str(i+1) + "/" + f       
+                os.makedirs(os.path.dirname(file), exist_ok=True)
+                oldfile = str(projectsdir) + "/" + p["name"]  + "/dist/v" + str(i+1) + "/" + f
+                print("copied " + p["name"] + " " + f)
+                shutil.copyfile(oldfile, file)
+
+        if "dirs" in p:
+            for d in p["dirs"]:
+                for i in range(0, p["verses"]):
+                    dir = codesdir + "/" + p["name"]  + "/v" + str(i+1) + "/" + d
+                    olddir = str(projectsdir) + "/" + p["name"] + "/dist/v" + str(i+1) + "/" +  d
+                    copy_and_overwrite(olddir, dir)
+    else:
+        for f in p["files"]:
+            file = codesdir + "/" + p["name"] + "/" + f       
+            os.makedirs(os.path.dirname(file), exist_ok=True)
+            oldfile = str(projectsdir) + "/" + p["name"] + "/" + f
+            print("copied " + p["name"] + " " + f)
+            shutil.copyfile(oldfile, file)
+
+        if "dirs" in p:
+            for d in p["dirs"]:
+                dir = codesdir + "/" + p["name"] + "/" + d
+                copy_and_overwrite(str(projectsdir) + "/" + p["name"] + "/" + d, dir)      
+
     if "video" not in p:    
         oldimgfile = str(projectsdir) + "/" + p["name"] + "/" + p["name"] + ".jpg"
         newimgfile = codesdir + p["name"] + ".jpg"
@@ -195,6 +216,7 @@ for p in projects:
         newimgfile = codesdir + p["name"] + ".mp4"
         shutil.copyfile(oldvidfile, newimgfile)
         print("copied " + oldvidfile)
+
     pwis.append(pwi)
 
 beginhtml = '''<div class='inner-brief'><p>
@@ -232,7 +254,11 @@ for p in pwis:
             glink = "<a class='link' href='https://github.com/evgeniyvinokurov/" + file + "'>github</a>"
         pwiht['htmlcodes'] += "<li>" + glink
         if len(p["files"]) > 0 or "dirs" in p:
-            pwiht['htmlcodes'] += "&nbsp;&nbsp;<a class='link' href='/static/demo/" + file + "/" + (p["baseUrl"] if "baseUrl" in p else "") + "index.html'>demo</a>"
+            if "verses" in p:
+                for i in range(0, p["verses"]):
+                    pwiht['htmlcodes'] += "&nbsp;&nbsp;<a class='link' href='/static/demo/" + file + "/v" + str(i+1) + "/" + (p["baseUrl"] if "baseUrl" in p else "") + "index.html'>demo " + str(i+1) + "</a>"
+            else:
+                pwiht['htmlcodes'] += "&nbsp;&nbsp;<a class='link' href='/static/demo/" + file + "/" + (p["baseUrl"] if "baseUrl" in p else "") + "index.html'>demo</a>"
         if "url" in p:
             pwiht['htmlcodes'] += "&nbsp;&nbsp;<a class='link' href='" + p["url"] + "'>demo</a>"        
         pwiht['htmlcodes'] += "</li>" + "</p></div>"
