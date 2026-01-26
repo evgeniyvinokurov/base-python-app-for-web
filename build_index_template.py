@@ -151,7 +151,7 @@ projects = [
     {"name": "xmla", "tags": ["python", "js", "xml", "bottle", "catalog", "markup", "tests", "docker", "import"], "files": [], "url": "/catalog/", "github": True},
     {"name": "xml-engine", "tags": ["python", "js", "xml", "bottle"], "files": [], "github": True},
     {"name": "veggy-farm", "tags": ["python", "django", "catalog", "markup", "docker", "sqlite"], "files": [], "github": True},
-    {"name": "base-python-app-for-web", "tags": ["python", "bottle", "xml", "vuejs", "markup"], "files": [], "url": "/feedback/", "github": True}
+    {"name": "feedback-form-bottle", "tags": ["python", "bottle", "xml", "vuejs", "markup"], "files": [], "url": "/feedback/", "github": True}
 ];
 
 projectsshort = [

@@ -1,7 +1,3 @@
 node_modules/*
-__pycache__/*
-projects/feedback/codes/feedback/__pycache__/*
-projects/feedback/codes/classes/__pycache__/*
-projects/race/codes/race/__pycache__/*
-projects/xmla/codes/xmla/__pycache__/*
+__pycache__/
 package-lock.json
