@@ -1120,7 +1120,7 @@ window.d = {
 		ticket_subject: "МИНТРАНС РФ",
 		ticket_main_city_info: "г.Архангельск",
 		ticket_main_company_inn_name: "NO",
-		ticket_main_company_inn_value: "12344356",
+		ticket_main_company_inn_value: "123435678",
 		ticket_type: "АВТОБУС",
 		ticket_title: "билет",
 		ticket_price: "21 rub",
@@ -1302,10 +1302,13 @@ window.ticketGenerator = new (function(){
 	}
 
 	this.getCity = function(){
+		if (this.city) 
+			return this.city;
+
 		var x = window.cities[this.getRandomInt(window.cities.length)];
 		x = !x ? "Архангельск" : x;
 
-		return "г. " + x;
+		return this.city = "г. " + x;
 	}
 
 	this.getPrice = function() {
