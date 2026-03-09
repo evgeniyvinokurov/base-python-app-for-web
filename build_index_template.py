@@ -109,7 +109,7 @@ projects = [
     {"name": "bus-tickets", "tags": ["js", "markup"], "dirs": ["imgs", "css"],  "files": [
         "all.js",
         "index.html"
-    ], "github": True, "musthave": True},
+    ], "github": True},
     {"name": "want-to-festival", "verses": 2, "github": True, "tags": ["js", "markup", "ymaps", "svg", "jquery"], "dirs": [
         "Bongos",
         "css",
