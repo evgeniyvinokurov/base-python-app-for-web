@@ -4,3 +4,4 @@ import router
 from projects.index.codes.index import router
 
 app = default_app()
+run()
