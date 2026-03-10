@@ -74,7 +74,7 @@
             t.addEventListener("click", function(e){
                 console.log("click")
                 doTag(this.innerHTML);
-                history.pushState({}, "", "/more?tag=" + this.innerHTML);
+                history.pushState({}, "", "/projects?tag=" + this.innerHTML);
             })
         }
         
