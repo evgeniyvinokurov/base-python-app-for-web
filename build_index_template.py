@@ -10,7 +10,7 @@ import random
 import json
 
 
-# TEXT FUNCTIONS
+# TEXT moreCTIONS
 
 class MyHTMLParser(HTMLParser):
     pcount = 0
@@ -49,15 +49,15 @@ today = str(date.today())
 
 footerfile = "./sources/footer.html"
 headerfile = "./sources/header.html"
+projectsfile = "./sources/projects.html"
 morefile = "./sources/more.html"
-funfile = "./sources/fun.html"
 indexfile = "./sources/index.html"
 
 
 footerhtml = ""
 headerhtml = ""
+projectsfilehtml = ""
 morefilehtml = ""
-funfilehtml = ""
 indexfilehtml = ""
 
 with open(headerfile, mode="r", encoding="utf-8") as f:
@@ -66,11 +66,11 @@ with open(headerfile, mode="r", encoding="utf-8") as f:
 with open(footerfile, mode="r", encoding="utf-8") as f:
     footerhtml = f.read()
 
+with open(projectsfile, mode="r", encoding="utf-8") as f:
+    projectsfilehtml = f.read()
+
 with open(morefile, mode="r", encoding="utf-8") as f:
     morefilehtml = f.read()
-
-with open(funfile, mode="r", encoding="utf-8") as f:
-    funfilehtml = f.read()
 
 with open(indexfile, mode="r", encoding="utf-8") as f:
     indexfilehtml = f.read()
@@ -144,19 +144,19 @@ projects = [
     {"name": "e-shop-client", "tags": ["js", "markup", "catalog", "vuejs", "canvas"], "dirs": ["assets"], "files": [
         "bundle.js",
         "index.html"
-    ], "github": True, "musthave": True},
+    ], "github": True, "pro": True},
     {"name": "jsons-arrays", "tags": ["json", "js", "import"], "files": [
         "/css/main.css",
         "all.js",
         "index.html"
-    ], "github": True, "musthave": True},
-    {"name": "users","tags": ["js", "angular", "markup"], "dirs": ["app"], "files": [], "baseUrl": "app/", "github": True, "musthave": True},
-    {"name": "laravel-sample", "tags": ["php", "api", "sqlite", "laravel", "docker"], "files": [], "github": True, "musthave": True},
-    {"name": "deezer-api-albums-php", "tags": ["php", "api", "sqlite"], "files": [], "url": "http://www.evgeniyvinokurov.byethost9.com/albums/", "github": True, "musthave": True},
-    {"name": "xmla", "tags": ["python", "js", "xml", "bottle", "catalog", "markup", "tests", "docker", "import"], "files": [], "url": "/catalog/", "github": True, "musthave": True},
-    {"name": "xml-engine", "tags": ["python", "js", "xml", "bottle"], "files": [], "github": True},
-    {"name": "veggy-farm", "tags": ["python", "django", "catalog", "markup", "docker", "sqlite"], "files": [], "github": True, "musthave": True},
-    {"name": "feedback-form-bottle", "tags": ["python", "bottle", "xml", "vuejs", "markup"], "files": [], "url": "/feedback/", "github": True, "musthave": True}
+    ], "github": True, "pro": True},
+    {"name": "users","tags": ["js", "angular", "markup"], "dirs": ["app"], "files": [], "baseUrl": "app/", "github": True, "pro": True},
+    {"name": "laravel-sample", "tags": ["php", "api", "sqlite", "laravel", "docker"], "files": [], "github": True, "pro": True},
+    {"name": "deezer-api-albums-php", "tags": ["php", "api", "sqlite"], "files": [], "url": "http://www.evgeniyvinokurov.byethost9.com/albums/", "github": True, "pro": True},
+    {"name": "xmla", "tags": ["python", "js", "xml", "bottle", "catalog", "markup", "tests", "docker", "import"], "files": [], "url": "/catalog/", "github": True, "pro": True},
+    {"name": "xml-engine", "tags": ["python", "js", "xml", "bottle"], "files": [], "github": True, "pro": True},
+    {"name": "veggy-farm", "tags": ["python", "django", "catalog", "markup", "docker", "sqlite"], "files": [], "github": True, "pro": True},
+    {"name": "feedback-form-bottle", "tags": ["python", "bottle", "xml", "vuejs", "markup"], "files": [], "url": "/feedback/", "github": True, "pro": True}
 ];
 
 projectsshort = [
@@ -227,15 +227,15 @@ for p in projects:
 beginhtml = '''<div class='inner-brief'><p>
 							Приветствую Вас на моем сайте, меня зовут Евгений, и я - программист; здесь располагаются примеры моих работ. 
 						</p>
-						<p>
+						<p class="links">
 							Если Вы хотите предложить мне работу: <a class="link" href="/faq/">Faq</a>,  <a class="link" href="https://github.com/evgeniyvinokurov">Github</a>, <a class="link" href="mailto:evgeniy.vinokuroff@yandex.ru">Mail</a>, <a class="link" href="https://arkhangelsk.hh.ru/resume/8af77502ff0232226d0039ed1f373737785438">Резюме</a>
                         </p>
 						<div class='inner-brief__project'>'''
 endhtml = '''
         </div></div>'''
 
-morehtml = "<h3 class='more'>More</h3><div class='tags'></div><div class='projects'>"
-funhtml = "<h3 class='more'>Fun</h3><div class='tags'></div><div class='projects'>"
+projectshtml = "<h3 class='more'>projects</h3><div class='tags'></div><div class='projects'>"
+morehtml = "<h3 class='more'>more</h3><div class='tags'></div><div class='projects'>"
 
 
 htmlcodes = "" 
@@ -247,7 +247,7 @@ for p in pwis:
     file = p["name"] 
     pwiht['htmlcodes'] = ""
     if not os.path.isfile(file):
-        is_must_have = "musthave" if "musthave" in p else "fun"
+        is_must_have = "pro" if "pro" in p else "more"
         pwiht['htmlcodes'] += "<div class='project " + is_must_have + " " + " ".join(p["tags"]) + "'><p><div>" + p["content"] + "</div>"
         if "video" not in p:
             imgpath = "/demo/" + file + ".jpg"
@@ -280,11 +280,11 @@ for jsp in pwihtml:
 jsonps = json.dumps(pwihtmlfiltered)
 
 for p in pwihtml: 
+    projectshtml += p['htmlcodes'] 
     morehtml += p['htmlcodes'] 
-    funhtml += p['htmlcodes'] 
 
+projectshtml += "</div>"
 morehtml += "</div>"
-funhtml += "</div>"
 
 
 
@@ -297,22 +297,22 @@ with open(preimgindexfile, mode="w", encoding="utf-8") as f:
     print("written: " + preimgindexfile)
 
 
+projectsfile = "./views/projects.html"
+os.makedirs(os.path.dirname(projectsfile), exist_ok=True)
+indexpreimghtml =  headerhtml + projectshtml +  projectsfilehtml + footerhtml
+
 morefile = "./views/more.html"
 os.makedirs(os.path.dirname(morefile), exist_ok=True)
-indexpreimghtml =  headerhtml + morehtml +  morefilehtml + footerhtml
+morepreimghtml =  headerhtml + morehtml +  morefilehtml + footerhtml
 
-funfile = "./views/fun.html"
-os.makedirs(os.path.dirname(funfile), exist_ok=True)
-funpreimghtml =  headerhtml + funhtml +  funfilehtml + footerhtml
 
+with open(projectsfile, mode="w", encoding="utf-8") as f:
+    f.write(indexpreimghtml) 
+    print("written: " + projectsfile)
 
 with open(morefile, mode="w", encoding="utf-8") as f:
-    f.write(indexpreimghtml) 
+    f.write(morepreimghtml) 
     print("written: " + morefile)
-
-with open(funfile, mode="w", encoding="utf-8") as f:
-    f.write(funpreimghtml) 
-    print("written: " + funfile)
 
 
 precssfile = "./static/css/main.css"

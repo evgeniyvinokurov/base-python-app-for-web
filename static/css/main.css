@@ -10,7 +10,7 @@ body {
 @font-face {
   font-family: 'ff';
   src: url("./Gill Sans Ultra Bold.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal; }
 
 ul {
@@ -201,6 +201,10 @@ h3 {
 
 .inner-brief {
   padding: 20px;
+}
+
+.inner-brief .links{
+  margin-bottom: 50px;
 }
 
 .que-faq-text {

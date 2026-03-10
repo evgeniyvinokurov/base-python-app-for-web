@@ -46,13 +46,13 @@
         let tag = searchParams.get('tag');
 
 
-        let projects = document.querySelectorAll(".project.musthave");				
+        let projects = document.querySelectorAll(".project.more");				
         let tagList = [];
 
         for (let p of projects) {
             let classNames =  p.className.split(" ")
             for (let c of classNames) {
-                if (tagList.indexOf(c) === -1 && c !== "project") {
+                if (tagList.indexOf(c) === -1 && c !== "project" && c !== "more") {
                     tagList.push(c);
                 }						
             }

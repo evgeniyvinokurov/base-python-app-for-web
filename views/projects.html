@@ -13,7 +13,7 @@
 						<div class="rubric">Site of Evgeniy Vinokurov</div>
 						<div class="title">:-)</div>
 					</a>
-				</div><h3 class='more'>more</h3><div class='tags'></div><div class='projects'><div class='project more python js xml bottle markup'><p><div><h2># roach-race v0.7.2
+				</div><h3 class='more'>projects</h3><div class='tags'></div><div class='projects'><div class='project more python js xml bottle markup'><p><div><h2># roach-race v0.7.2
 </h2></br>
 Тараканьи бега</br>
 - ставки, гипотетический кошелек</br>
@@ -237,13 +237,13 @@ Bottle feedback form for bottle xml app.</br>s
         let tag = searchParams.get('tag');
 
 
-        let projects = document.querySelectorAll(".project.more");				
+        let projects = document.querySelectorAll(".project.pro");				
         let tagList = [];
 
         for (let p of projects) {
             let classNames =  p.className.split(" ")
             for (let c of classNames) {
-                if (tagList.indexOf(c) === -1 && c !== "project" && c !== "more") {
+                if (tagList.indexOf(c) === -1 && c !== "project" && c !== "pro") {
                     tagList.push(c);
                 }						
             }

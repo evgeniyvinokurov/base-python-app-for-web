@@ -19,8 +19,8 @@ def feedback(name='World'):
     param = {}
     return param   
 
-@route('/fun')
-@view('fun')
+@route('/projects')
+@view('projects')
 def feedback(name='World'):
     param = {}
     return param   
