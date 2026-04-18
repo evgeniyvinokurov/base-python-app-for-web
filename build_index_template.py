@@ -228,7 +228,11 @@ beginhtml = '''<div class='inner-brief'><p>
 							Приветствую Вас на моем сайте, меня зовут Евгений, и я - программист; здесь располагаются примеры моих работ. 
 						</p>
 						<p class="links">
-							Если Вы хотите предложить мне работу: <a class="link" href="/faq/">Faq</a>,  <a class="link" href="https://github.com/evgeniyvinokurov">Github</a>, <a class="link" href="mailto:evgeniy.vinokuroff@yandex.ru">Mail</a>, <a class="link" href="https://arkhangelsk.hh.ru/resume/8af77502ff0232226d0039ed1f373737785438">Резюме</a>
+							Если Вы хотите предложить мне работу:                             
+                            <a class="link" href="/faq/">Faq</a>,  
+                            <a class="link" href="https://github.com/evgeniyvinokurov">Github</a>, 
+                            <a class="link" href="mailto:evgeniy.vinokuroff@yandex.ru">Mail</a>, 
+                            <a class="link" href="https://arkhangelsk.hh.ru/resume/8af77502ff0232226d0039ed1f373737785438">Резюме</a>
                         </p>
 						<div class='inner-brief__project'>'''
 endhtml = '''

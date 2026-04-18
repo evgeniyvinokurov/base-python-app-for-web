@@ -139,7 +139,7 @@ jQuery(document).ready(function ($) {
 
 	 	ymaps.ready(function () {
 		    var myMap = new ymaps.Map('map', {
-		            center: [long, lat],
+		            center: [lat-1, long-1],
 		            zoom: 5,
 		            controls: []
 		        }, {
@@ -304,6 +304,10 @@ jQuery(document).ready(function ($) {
 				  }
 				}
 			);
+
+			myMap.panTo([
+                [lat-1, long-1]
+            ]);
 		});
 	}
 
