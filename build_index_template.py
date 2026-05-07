@@ -105,6 +105,7 @@ tdate = datetime.datetime.utcfromtimestamp(ti_m).strftime('%Y-%m-%d')
 # CODES 
 
 projects = [
+    {"name": "vksearchgroupsposts", "tags": ["vk", "js", "ai"], "files": [], "github": True},
     {"name": "roach-race", "tags": ["python", "js", "xml", "bottle", "markup"], "files": [], "url": "/race/", "github": True},
     {"name": "bus-tickets", "tags": ["js", "markup"], "dirs": ["imgs", "css"],  "files": [
         "all.js",
