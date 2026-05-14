@@ -50,14 +50,12 @@ today = str(date.today())
 footerfile = "./sources/footer.html"
 headerfile = "./sources/header.html"
 projectsfile = "./sources/projects.html"
-morefile = "./sources/more.html"
 indexfile = "./sources/index.html"
 
 
 footerhtml = ""
 headerhtml = ""
 projectsfilehtml = ""
-morefilehtml = ""
 indexfilehtml = ""
 
 with open(headerfile, mode="r", encoding="utf-8") as f:
@@ -69,8 +67,6 @@ with open(footerfile, mode="r", encoding="utf-8") as f:
 with open(projectsfile, mode="r", encoding="utf-8") as f:
     projectsfilehtml = f.read()
 
-with open(morefile, mode="r", encoding="utf-8") as f:
-    morefilehtml = f.read()
 
 with open(indexfile, mode="r", encoding="utf-8") as f:
     indexfilehtml = f.read()
@@ -106,42 +102,21 @@ tdate = datetime.datetime.utcfromtimestamp(ti_m).strftime('%Y-%m-%d')
 
 projects = [
     {"name": "vksearchgroupsposts", "tags": ["vk", "js", "ai", "api"], "files": [], "github": True, "pro": True},
-    {"name": "roach-race", "tags": ["python", "js", "xml", "bottle", "markup"], "files": [], "url": "/race/", "github": True},
+    {"name": "roach-race", "tags": ["python", "js", "xml", "bottle", "markup"], "files": [], "url": "/race/", "github": True, "pro": True},
     {"name": "bus-tickets", "tags": ["js", "markup"], "dirs": ["imgs", "css"],  "files": [
         "all.js",
         "index.html"
-    ], "github": True},
-    {"name": "want-to-festival", "verses": 2, "github": True, "tags": ["js", "markup", "ymaps", "svg", "jquery"], "dirs": [
-        "Bongos",
-        "css",
-        "fonts",
-        "imgs",
-        "music"
-        ], "files": [
-        "all.js",        
-        "index.html"]
-    },
+    ], "github": True, "pro": True},
     {"name": "quest-thing", "tags": ["json", "js", "jquery"], "dirs": ["css"], "files": [
         "all.js",
         "index.html",
         "index-constructor.html"
-    ], "github": True},
-    {"name": "text-animation","tags": ["jquery", "js", "markup"], "dirs": ["css"], "files": [
-        "all.js",
-        "index.html"
-    ]},
+    ], "github": True, "pro": True},
     {"name": "basic-tetris","tags": ["js", "canvas"], "files": [
         "tetris.js",
         "index.html"
-    ]},
-    {"name": "random-place","tags": ["js", "ymaps"], "files": [
-        "all.js",
-        "index.html"
-    ], "dirs": ["imgs", "fonts", "css"]},
-    {"name": "get-your-song", "tags": ["php"], "files": [], "url": "http://www.evgeniyvinokurov.byethost9.com/get-your-song/"},
-    {"name": "random-scripts-video-and-texts", "video": "true", "tags": ["python", "ffmpeg"], "files": [], "github": True},
-    {"name": "story-linker", "tags": ["python", "js"], "files": [], "github": True},
-    {"name": "lottery-salt-emulator", "tags": ["python", "bottle", "xml", "js"], "files": []},
+    ], "pro": True},
+    {"name": "story-linker", "tags": ["python", "js"], "files": [], "github": True, "pro": True},
     {"name": "e-shop-client", "tags": ["js", "markup", "catalog", "vuejs", "canvas"], "dirs": ["assets"], "files": [
         "bundle.js",
         "index.html"
@@ -155,8 +130,7 @@ projects = [
     {"name": "laravel-sample", "tags": ["php", "api", "sqlite", "laravel", "docker"], "files": [], "github": True, "pro": True},
     {"name": "deezer-api-albums-php", "tags": ["php", "api", "sqlite"], "files": [], "url": "http://www.evgeniyvinokurov.byethost9.com/albums/", "github": True, "pro": True},
     {"name": "xmla", "tags": ["python", "js", "xml", "bottle", "catalog", "markup", "tests", "docker", "import"], "files": [], "url": "/catalog/", "github": True, "pro": True},
-    {"name": "xml-engine", "tags": ["python", "js", "xml", "bottle"], "files": [], "github": True, "pro": True},
-    {"name": "veggy-farm", "tags": ["python", "django", "catalog", "markup", "docker", "sqlite"], "files": [], "github": True, "pro": True},
+    {"name": "veggy-farm", "tags": ["python", "django", "catalog", "markup", "docker", "sqlite"], "files": [], "github": True, "pro": True, "url": "https://veggy-farm.onrender.com/merch"},
     {"name": "feedback-form-bottle", "tags": ["python", "bottle", "xml", "vuejs", "markup"], "files": [], "url": "/feedback/", "github": True, "pro": True}
 ];
 
@@ -240,7 +214,7 @@ endhtml = '''
         </div></div>'''
 
 projectshtml = "<h3 class='more'>projects</h3><div class='tags'></div><div class='projects'>"
-morehtml = "<h3 class='more'>more</h3><div class='tags'></div><div class='projects'>"
+
 
 
 htmlcodes = "" 
@@ -286,10 +260,8 @@ jsonps = json.dumps(pwihtmlfiltered)
 
 for p in pwihtml: 
     projectshtml += p['htmlcodes'] 
-    morehtml += p['htmlcodes'] 
 
 projectshtml += "</div>"
-morehtml += "</div>"
 
 
 
@@ -306,18 +278,12 @@ projectsfile = "./views/projects.html"
 os.makedirs(os.path.dirname(projectsfile), exist_ok=True)
 indexpreimghtml =  headerhtml + projectshtml +  projectsfilehtml + footerhtml
 
-morefile = "./views/more.html"
-os.makedirs(os.path.dirname(morefile), exist_ok=True)
-morepreimghtml =  headerhtml + morehtml +  morefilehtml + footerhtml
 
 
 with open(projectsfile, mode="w", encoding="utf-8") as f:
     f.write(indexpreimghtml) 
     print("written: " + projectsfile)
 
-with open(morefile, mode="w", encoding="utf-8") as f:
-    f.write(morepreimghtml) 
-    print("written: " + morefile)
 
 
 precssfile = "./static/css/main.css"
